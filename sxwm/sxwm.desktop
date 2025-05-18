@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=sxwm
+Comment=sxwm
+Exec=sxwm
+Type=Application
+Keywords=wm;tiling
