@@ -29,7 +29,7 @@ window#waybar {
 }
 
 /* Modules */
-#clock, #battery, #network, #custom-updates, #pulseaudio, #pulseaudio-slider,#tray {
+#clock, #battery, #network, #custom-updates, #pulseaudio, #pulseaudio-slider,#tray,#custom-nowplaying {
   margin: 4px 5px;
   padding: 5px 12px;
   background: rgba(20, 20, 20, 0.8);
@@ -69,6 +69,7 @@ window#waybar {
 }
 
 /* Slider */
+
 #pulseaudio-slider slider {
   min-height: 0;
   min-width: 0;

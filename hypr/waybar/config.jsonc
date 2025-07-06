@@ -3,11 +3,10 @@
   "position": "top",
   "height": 30,
   "spacing": 4,
-  "modules-left": ["network","pulseaudio"],
+  "modules-left": ["custom/nowplaying", "network", "pulseaudio", "pulseaudio/slider"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["clock","battery", "custom/updates", "tray"],
-  
-  // Apply global styles (as in your original CSS)
+  "modules-right": ["clock", "battery", "custom/updates", "tray"],
+
   "hyprland/workspaces": {
     "format": "{name}",
     "on-click": "activate",
@@ -32,7 +31,7 @@
     "on-click-middle": "close"
   },
   "clock": {
-    "format": " {:%H:%M}",
+    "format": " {:%H:%M}"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -43,6 +42,11 @@
     "scroll-step": 5,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip": false
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
   },
   "network": {
     "format-wifi": " {essid} ({signalStrength}%)",
@@ -71,13 +75,28 @@
     "on-click": "rofi -show drun",
     "tooltip": false
   },
+  "custom/nowplaying": {
+    "exec": "~/.config/waybar/nowplaying.sh",
+    "interval": 5,
+    "format": "{}",
+    "tooltip": false
+  },
+  "custom/music_controls": {
+    "exec": "echo '▶ ⏸ ⏭ ⏮ ⏹'",
+    "click-left": "curl -s http://localhost:8000/control/playpause",
+    "click-right": "curl -s http://localhost:8000/control/stop",
+    "scroll-up": "curl -s http://localhost:8000/control/next",
+    "scroll-down": "curl -s http://localhost:8000/control/prev",
+    "format": "{}",
+    "interval": 0
+  },
   "tray": {
     "icon-size": 21,
     "spacing": 10,
     "icons": {
-        "blueman": "bluetooth",
-        "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
     }
+  }
 }
 
-}
