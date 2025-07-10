@@ -12,6 +12,12 @@ window#waybar {
 }
 
 /* Workspaces */
+
+#workspaces {
+  padding: 10 20px;
+  opacity: 1;
+  border-radius: 10px;
+}
 #workspaces button {
   padding: 0 12px;
   color: #6c7086;
@@ -24,9 +30,18 @@ window#waybar {
   border-bottom: 2px solid #89b4fa;
 }
 
-#workspaces button.urgent {
-  color: #f38ba8;
+#workspaces button.active {
+  color: #F2ffFF;
+  border: none;
+  background-color: rgba(30, 50, 80, 1);
+  border-radius: 50px;
+  border-bottom: 2px solid #89b4fa;
 }
+#workspaces button.urgent {
+  color: #249999;
+}
+
+
 
 /* Modules */
 #clock, #battery, #network, #custom-updates, #pulseaudio, #pulseaudio-slider,#tray,#custom-nowplaying {
